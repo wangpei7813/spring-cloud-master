@@ -13,10 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class UserController {
 
+    private int count = 0;
+
     @GetMapping("/get-user")
     public User getUser(String id) {
-        log.info("---------- provider-1 ---------- id = {}", id);
 
-        return new User(id, "provider-1");
+        log.info("---------- provider-1 ---------- id = {}", id);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        count++;
+        System.out.println(count);
+
+        return new User(id, "provider-1-"+ count);
     }
 }
