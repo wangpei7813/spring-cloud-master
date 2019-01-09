@@ -8,9 +8,9 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@EnableDiscoveryClient    //标识具体的一个服务,需要向注册中心注册
+//标识具体的一个服务,需要向注册中心注册
+@EnableDiscoveryClient
 @SpringBootApplication
-@EnableAutoConfiguration
 public class ConsumerApplication {
 
 	@Bean
